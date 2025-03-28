@@ -70,34 +70,63 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    context 'when the previous step is 9' do
+      it 'return 5' do
+        previous_step = 9 # Arrange
+        result = game.subtract_four(previous_step) # Act
+        expect(result).to eq(5) # Assert
+      end
+    end
   end
 
   describe '#divide_by_two' do
+    context 'when the previous step is 10' do
+        it 'return 5' do
+          previous_step = 10 # Arrange
+          result = game.divide_by_two(previous_step) # Act
+          expect(result).to eq(5) # Assert
+        end
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
   describe '#subtract_random_number' do
+  context 'when the previous step is 10 and random_number is 3' do
+    subject(:game_three) { described_class.new(3) }
+
+    it 'returns 7' do
+      previous_step = 10
+      result = game_three.subtract_random_number(previous_step)
+      expect(result).to eq(7)
+    end
+  end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
+    context 'when the random number is 17' do
+      subject(:seventhen) {described_class.new(17)}
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(seventhen.play).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 1119' do
+      subject(:game_thousand) {described_class.new(1119)}
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(game_thousand.play).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 113,674,112' do
+      subject(:game_huge) {described_class.new(113_674_112)}
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(game_huge.play).to eq(7)
       end
     end
   end
