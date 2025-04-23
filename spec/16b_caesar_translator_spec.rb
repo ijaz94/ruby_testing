@@ -17,7 +17,7 @@ require_relative '../lib/16b_caesar_translator'
 
 describe CaesarTranslator do
   # Query Method -> Test the return value
-  describe '#translate' do
+  describe '#translate' do z
     context 'when translating one word' do
       subject(:one_word) { described_class.new('Odin') }
 
